@@ -1,0 +1,347 @@
+.meow-script-regular {
+  font-family: "Meow Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+.yellowtail-regular {
+  font-family: "Yellowtail", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.kiwi-maru-regular {
+  font-family: "Kiwi Maru", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+
+.playfair-display-font {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight:500;
+  font-style: normal;
+}
+
+
+
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  overflow: hidden;
+  background: #06020b;
+}
+
+/* animated background */
+body::before {
+  content: "";
+  position: fixed;
+  inset: -8%;
+  z-index: -1;
+
+  background: url("/purplehaze.png") center / cover no-repeat;
+
+  filter: blur(2px);
+  transform: translate3d(0,0,0) scale(1.04);
+  will-change: transform, filter;
+
+  pointer-events: none;
+}
+
+body::before {
+  animation: bgDrift 10s alternate-reverse infinite;
+}
+
+@keyframes bgDrift {
+  0% {
+    filter: blur(3px);
+    transform: translate3d(0,0,0) scale(1.05);
+  }
+  50% {
+    filter: blur(16px);
+    transform: translate3d(-30px, 60px, 0) scale(1.2);
+  }
+  100% {
+    filter: blur(3px);
+    transform: translate3d(0,0,0) scale(1.05);
+  }
+}
+
+
+
+
+
+
+.overlay{
+  position: absolute;
+  pointer-events: auto;
+  width: 700px;
+  aspect-ratio: 2/1.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.headphoneimage{
+  display: flex;
+  justify-items: center;
+}
+.headphoneimage .image{
+  height: 150px;
+  fill: white;
+}
+
+.message{
+  font-size: 40px;
+  font-family: "Yellowtail", cursive;
+  color:white;
+}
+
+
+.play{
+  font-size: 20px;
+  width: 150px;
+  height: 50px;
+  cursor: pointer;
+  font-family: "Kiwi Maru", serif;
+  backdrop-filter: blur(30px);
+  background-color: #ffb3c4;
+  opacity: 40%;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 0 18px black;
+}
+
+
+  /* Main container */
+
+  .container {
+    opacity:0;
+    pointer-events: none;
+    width: 700px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .text1 {
+    position:relative;
+    top: -5%;
+    left:5%;
+    width: 100%;
+    font-size: 45px;
+    font-family: "Yellowtail", cursive;
+  }
+
+  .text2 {
+    position:relative;
+    top:-15%;
+    opacity: 0;
+    font-size: 30px;
+    font-family: "Playfair Display";
+    transition: opacity 1s ease;
+  }
+
+  .top {
+    border-radius: 5%;
+    height: 80%;
+    backdrop-filter: blur(30px);
+    opacity: 60%;
+    background: linear-gradient(
+      135deg,
+      rgb(253,228,242),
+      rgb(249,206,231),
+      rgb(244,184,218),
+      rgb(238,161,205),
+      rgb(230,139,190)
+    );
+    background-size: 300% 300%;
+    animation: sparkle 4s ease-in-out infinite;
+    overflow: hidden;
+
+  }
+
+    .cutepic{
+      position: absolute;
+     opacity: 0;
+      width: 35%;
+      aspect-ratio: auto;
+      top:45%;
+      transition: opacity 1s ease;
+
+    }
+  .maintext {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  .bottom {
+    opacity:0;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: space-evenly;
+    gap: 10px;
+    padding: 10px;
+    transition: opacity 0.5s ease;
+
+  }
+
+
+  .box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+  }
+
+  .bottom button {
+    font-size: 20px;
+    width: 30%;
+    height: 30%;
+    cursor: pointer;
+    font-family: "Kiwi Maru", serif;
+    backdrop-filter: blur(30px);
+    opacity: 40%;
+    background: linear-gradient(
+      135deg,
+      rgb(253, 228, 242),
+      rgb(249, 206, 231),
+      rgb(244, 184, 218),
+      rgb(238, 161, 205),
+      rgb(230, 139, 190)
+    );
+    background-size: 300% 300%;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 0 18px black;
+    transition: transform 0.10s ease;
+  }
+
+  button:hover {
+    box-shadow: 0 0 18px rgba(238, 161, 205, 0.8),
+    0 0 40px rgba(249, 206, 231, 0.5);
+  }
+
+.no{
+  will-change: transform;
+
+}
+  @keyframes sparkle {
+    0% {
+      background-position: 0% 50%;
+      box-shadow: 0 0 10px rgba(238,161,205,0.4),
+      0 0 25px rgba(249,206,231,0.25);
+    }
+    50% {
+      background-position: 100% 50%;
+      box-shadow: 0 0 18px rgba(238,161,205,0.8),
+      0 0 40px rgba(249,206,231,0.5);
+    }
+    100% {
+      background-position: 0% 50%;
+      box-shadow: 0 0 10px rgba(238,161,205,0.4),
+      0 0 25px rgba(249,206,231,0.25);
+    }
+  }
+
+
+.overlay, .container, .result {
+  transition: opacity 0.5s ease;
+}
+
+
+
+.result {
+  position: absolute;
+  opacity:0;
+  pointer-events: none;
+  width: 700px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  z-index: 9999;
+}
+
+.card{
+  border-radius: 5%;
+  height: 80%;
+  backdrop-filter: blur(30px);
+  opacity: 60%;
+  background: linear-gradient(
+    135deg,
+    rgb(253,228,242),
+    rgb(249,206,231),
+    rgb(244,184,218),
+    rgb(238,161,205),
+    rgb(230,139,190)
+  );
+  background-size: 300% 300%;
+  animation: sparkle 4s ease-in-out infinite;
+  overflow: hidden;
+  align-items: center;
+
+
+}
+
+.text{
+  position: relative;
+  text-align: center;
+  font-family: "Meow Script", cursive;
+  font-size: 80px;
+}
+.invite{
+  position: relative;
+  top:-10%;
+  font-family: "Playfair Display";
+  font-size:35px;
+  text-align: center;
+}
+
+#emoji-rain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none; /* doesn't block clicking */
+  overflow: hidden;
+  z-index: 1000; /* keep on top*/
+}
+
+.emoji-drop {
+  position: absolute;
+  top: -2rem;
+  will-change: transform, opacity;
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  user-select: none;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.25));
+}
+
+@keyframes fall {
+  to {
+    transform: translate3d(var(--drift, 0px), 110vh, 0) rotate(var(--rot, 0deg));
+    opacity: 0.95;
+  }
+}
+
+
+.cat{
+  position: absolute;
+  bottom:-60%;
+}
+
+
+
